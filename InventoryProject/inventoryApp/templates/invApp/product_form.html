@@ -1,4 +1,5 @@
 {%extends 'invApp/layout.html'%}
+{%load crispy_forms_tags%}
     
 {% block title %}Product Form {% endblock %}
 {% block content %}
@@ -6,7 +7,7 @@
 <h1 class="text-center">Product Form</h1>
 <form method="POST" class="jumbotron">
     {% csrf_token %}
-    {{form}}
+    {{form|crispy}} <!-- Use crispy forms for better styling -->
     <button type="submit" class="btn btn-success ">Save Product</button>
 </form>
 {%endblock%}
